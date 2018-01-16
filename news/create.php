@@ -39,7 +39,6 @@ $GET = $_SERVER[REQUEST_URI];
 $product->titreArticle = $_GET['titreArticle'];
 $product->corpsArticle = $_GET['corpsArticle'];
 $product->imgArticle = $_GET['imgArticle'];
-$product->datePublication = $_GET['datePublication'];
 $product->idCategorie = $_GET['idCategorie'];
 $product->idUser = $_GET['idUser'];
 

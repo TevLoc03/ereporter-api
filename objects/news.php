@@ -19,7 +19,7 @@ class News{
     // read products
     function read(){
         // select all query
-        $query = "SELECT idArticle, titreArticle, corpsArticle, imgArticle, statutArticle, datePublication, commentaire, idCategorie, idUser FROM articles GROUP BY titreArticle";
+        $query = "SELECT idArticle, titreArticle, corpsArticle, imgArticle, statutArticle,datePublication, commentaire, idCategorie, idUser FROM articles GROUP BY titreArticle";
         // prepare query statement
         $stmt = $this->conn->query($query);
     
@@ -30,7 +30,7 @@ class News{
     function create(){
         // query to insert record
         $query = "INSERT INTO " . $this->table_name . "
-                SET titreArticle=:titreArticle, corpsArticle=:corpsArticle, imgArticle=:imgArticle,  datePublication=:datePublication, idCategorie=:idCategorie, idUser=:idUser";
+                SET titreArticle=:titreArticle, corpsArticle=:corpsArticle, imgArticle=:imgArticle, idCategorie=:idCategorie, idUser=:idUser";
     
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -39,7 +39,6 @@ class News{
         $this->titreArticle=htmlspecialchars(strip_tags($this->titreArticle));
         $this->corpsArticle=htmlspecialchars(strip_tags($this->corpsArticle));
         $this->imgArticle=$this->imgArticle;
-        $this->datePublication=htmlspecialchars(strip_tags($this->datePublication));
         $this->idCategorie=htmlspecialchars(strip_tags($this->idCategorie));
         $this->idUser=htmlspecialchars(strip_tags($this->idUser));
     
@@ -47,7 +46,6 @@ class News{
         $stmt->bindParam(":titreArticle", $this->titreArticle);
         $stmt->bindParam(":corpsArticle", $this->corpsArticle);
         $stmt->bindParam(':imgArticle', $this->imgArticle);
-        $stmt->bindParam(':datePublication', $this->datePublication);
         $stmt->bindParam(":idCategorie", $this->idCategorie);
         $stmt->bindParam(":idUser", $this->idUser);
 
@@ -86,7 +84,6 @@ class News{
         $this->corpsArticle = $row['corpsArticle'];
         $this->imgArticle = $row['imgArticle'];
         $this->statutArticle = $row['statutArticle'];
-        $this->datePublication = $row['datePublication'];
         $this->commentaire = $row['commentaire'];
         $this->idCategorie = $row['idCategorie'];
         $this->idUser = $row['idUser'];
@@ -103,7 +100,6 @@ class News{
                     idCategorie = :idCategorie,
                     imgArticle = :imgArticle,
                     statutArticle = :statutArticle,
-                    datePublication = :datePublication,
                     commentaire = :commentaire,
                     idUser = :idUser
                 WHERE
@@ -117,7 +113,6 @@ class News{
         $this->corpsArticle=htmlspecialchars(strip_tags($this->corpsArticle));
         $this->imgArticle=$this->imgArticle;
         $this->statutArticle=htmlspecialchars(strip_tags($this->statutArticle));
-        $this->datePublication=htmlspecialchars(strip_tags($this->datePublication));
         $this->commentaire=htmlspecialchars(strip_tags($this->commentaire));
         $this->idCategorie=htmlspecialchars(strip_tags($this->idCategorie));
         $this->idUser=htmlspecialchars(strip_tags($this->idUser));
@@ -128,7 +123,6 @@ class News{
         $stmt->bindParam(':corpsArticle', $this->corpsArticle);
         $stmt->bindParam(':imgArticle', $this->imgArticle);
         $stmt->bindParam(':statutArticle', $this->statutArticle);
-        $stmt->bindParam(':datePublication', $this->datePublication);
         $stmt->bindParam(':commentaire', $this->commentaire);
         $stmt->bindParam(':idUser', $this->idUser);
         $stmt->bindParam(':idCategorie', $this->idCategorie);

@@ -27,7 +27,6 @@ $product->titreArticle = $_POST['titreArticle'];
 $product->corpsArticle = $_POST['corpsArticle'];
 $product->imgArticle = $_POST['imgArticle'];
 $product->statutArticle = $_POST['statutArticle'];
-$product->datePublication = $_POST['datePublication'];
 $product->commentaire = $_POST['commentaire'];
 $product->idCategorie = $_POST['idCategorie'];
 $product->idUser = $_POST['idUser'];
