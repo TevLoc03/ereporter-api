@@ -19,7 +19,7 @@ class News{
     // read products
     function read(){
         // select all query
-        $query = "SELECT idArticle, titreArticle, corpsArticle, imgArticle, statutArticle, datePublication, commentaire, idCategorie, idUser FROM articles";
+        $query = "SELECT idArticle, titreArticle, corpsArticle, imgArticle, statutArticle, datePublication, commentaire, idCategorie, idUser FROM articles GROUP BY titreArticle";
         // prepare query statement
         $stmt = $this->conn->query($query);
     
